@@ -74,8 +74,24 @@ class discord_hook extends Plugin {
 	function hook_article_filter_action($article, $action) {
 		$discord_webhook_url = $this->host->get($this, "discord_webhook_url");
 		if ($discord_webhook_url) {
+			// get all LABELS for this article / line
+			$labels = Article::get_article_labels($article['id']);
+			if (count($labels) > 0) {
+				foreach ($labels as $label) {
+					if(strpos($label, $discord_webhook_url) !== false){
+						echo "Found!";
+						// array_push($line['tags'], $label);
+						$this->send_article($label, $article['title'], $article['link']);
+					} 
+				}
+			// $this->send_article($discord_webhook_url, $article['title'], $article['link']);
+			}
+		}
+	/* from https://community.tt-rss.org/t/generated-feeds-include-labels-as-tags/4171
+		if ($discord_webhook_url) {
 			$this->send_article($discord_webhook_url, $article['title'], $article['link']);
 		}
+	}*/		
 		return $article; // leave untouched!
 	}
 
