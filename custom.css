@@ -1,0 +1,2 @@
+a.label { max-width: 30% ; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+span.dijitTreeLabel { max-width: 60% ; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
