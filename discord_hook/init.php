@@ -75,7 +75,7 @@ class discord_hook extends Plugin {
 		$discord_webhook_url = $this->host->get($this, "discord_webhook_url");
 		if ($discord_webhook_url) {
 			// get all LABELS for this article / line
-			$labels = Article::get_article_labels($article['id']);
+			$labels = $article["labels"]);
 			if (count($labels) > 0) {
 				foreach ($labels as $label) {
 					if(strpos($label, $discord_webhook_url) !== false){
