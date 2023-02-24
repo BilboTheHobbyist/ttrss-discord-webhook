@@ -7,6 +7,6 @@ I wanted to use it with a recent TinyTinyRSS version, so I shamelessly copied co
 
 According to danirod, this was a very WIP plugin to start with. I didn't improve anything, so use under your own risk.
 ## how to install
-Copy the discord_hook directory to your plugins.local/ directory in your TinyTinyRSS install. 
+Copy the discord_hook directory to your plugins.local/ directory in your TinyTinyRSS install.
 This plugin will use discord urls as labels. Such labels are potentially wider than the regular ones. Therefore you may customize the theme you are using with the content of the custom.css file.
 If you are using Docker builds, you can also bind the directories or something like that.
