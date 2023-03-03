@@ -78,10 +78,10 @@ class discord_hook extends Plugin {
 			$labels = $article["labels"]);
 			if (count($labels) > 0) {
 				foreach ($labels as $label) {
-					if(strpos($label, $discord_webhook_url) !== false){
+					if(strpos($label[1], $discord_webhook_url) !== false){
 						echo "Found!";
 						// array_push($line['tags'], $label);
-						$this->send_article($label, $article['title'], $article['link']);
+						$this->send_article($label[1], $article['title'], $article['link']);
 					} 
 				}
 			// $this->send_article($discord_webhook_url, $article['title'], $article['link']);
